@@ -55,12 +55,284 @@
     <h1><b>Rules of EF.Codd</b></h1>. <br>
     <ol>
         <li>Data entered into the cell must be single valued data (if we have double values then we can cerete new table )</li>
-        <li>In RDBMS we can store the data into multiple tables if neccessary we can establish relationship between tables </li>
-        <li>In RDBMS everything will be stored in the form of tables including META DATA</li>
+        <li>In RDBMS we can store the data into multiple tables . if neccessary we can establish relationship between tables </li>
+        <li>In RDBMS everything will be stored in the form of tables including META DATA ( details about the data is claled as meta deta ) </li>
         <li>data entered into a cell must be validated </li>
         we can do validation by assigining datatypes and contraints to colomn of a table . 
 
     </ol>
+
+    note :
+    table : cominations of rows and columns  . table / entity / object <br>
+    chell : intersection of rows and columns <br>
+    rows / records / tuples <br>
+    column / atributes / fields <br>
+    <h2>Data types </h2>
+    Data is type of data that can be stored in a particular column of the table is called datatype <br>
+    In oracle SQL we have these data types are followed
+    <ol>
+        <li>CHAR</li>
+        <li>VARCHAR/VARCHAR2</li>
+        <li>NUMBER</li>
+        <li>DATE</li>
+        <li>LOB(large object)</li>
+        <ul>
+            <li>CLOB (charcter large object) </li>
+            <li>BLOB (Binary large object)</li>
+        </ul>
+    </ol>
+    <h4>1. char</h4>
+    char stands for Charchter <br>
+    If we assign column of a table with CHAR datatype we can store Alapabets (A-Z/a-z), Number (0-9), and special charcter(&, ? , # ,@). <br>
+    The deafult size of char is ONE (1) <br>
+    IN char we can store upto 2000 Character <br>
+    Char follows fixed length memory allocation <br>
+    char must be encloed with single coats ('') <br>
+    Syntax:
+    char (size)
+    <br>
+    <h4>2. Varchar </h4>
+    varchar Stands for Variable charcter <br>
+    If we assign column of a table with CHAR datatype we can store Alapabets (A-Z/a-z), Number (0-9), and special charcter(&, ? , # ,@). <br>
+    The default size of varchar is 0 ( zero) <br>
+    in varchar we can store upto 2000 charcters , varchar2 is updated version of varchar . where we can store 4000 charcters. <br>
+    varchar follows variable length memory allocation . <br>
+    here also charcter must be enclosed with single coutes (''). <br>
+    syntax : varchar(size) <br>
+    <!DOCTYPE html>
+
+<h1>Difference between CHAR and VARCHAR</h1>
+
+<h2>CHAR</h2>
+<ul>
+    <li>Stores data in fixed length.</li>
+    <li>If the allocated space is not fully used, remaining space is filled with blank spaces.</li>
+    <li>Also called a static data type.</li>
+    <li>Defined size of CHAR is fixed (e.g., CHAR(2000)).</li>
+    <li>Can store up to the defined number of characters.</li>
+    <li>Execution is faster.</li>
+</ul>
+
+<h2>VARCHAR</h2>
+<ul>
+    <li>Stores data in variable length.</li>
+    <li>Only actual data is stored; unused space is not consumed.</li>
+    <li>Also called a dynamic data type.</li>
+    <li>Default size varies (e.g., VARCHAR2 in Oracle up to ~4000 bytes depending on settings).</li>
+    <li>Uses memory efficiently.</li>
+    <li>Execution is slower compared to CHAR.</li>
+</ul>
+
+Example Visualisation
+If you define both columns with a length of 10 and store the word "Data":
+Data Type 	Definition	Data Stored	Actual Storage (Bytes)	Visual Representation
+CHAR	CHAR(10)	"Data"	10 bytes	[D][a][t][a][ ][ ][ ][ ][ ][ ] (Padded)
+VARCHAR2	VARCHAR2(10)	"Data"	4 bytes (+1-2 metadata)	[D][a][t][a] (No padding)
+
+<h4>3. Number </h4>
+If we assign column of the table with Number datatype we can store any number. <br>
+syntax : number (precision , [scale]) and Integer = precission - scale . <br>
+precission : total number of digits including decimal values . 
+Scale : Total number of  decimal values ( default value is '0')
+the range of precission : 1 - 38 ;
+the range of scale  : -84 to 127 ;
+<b>rules </b>
+1. precision check 
+2. scale check(decimal)
+3. Interger ( Precision - Scale )
+
+<h4>4.Date</h4>
+if we assign column of the table with date dataype , we can store data value in below mentioned formats 
+1.DD-MON-YY
+2.DD-MON-YYYY
+
+Syntax : Date 
+
+NOTE :  date must be enclosed inside the single quote ('') . ex : 'DD-MON-YYYY';
+
+<h4>5. LOB</h4>
+<h5>1.CLOB</h5>
+here we can store huge amount of charcters upto 4GB of size
+<h5>2.BLOB</h5>
+Here we can store Binaray valuees of images , audio , documents , etc upto 4GB of size
+note : Data types are mandotary and we can <b> assign only one datatype for a column </b>. 
+
+
+<h2>CONSTRIENTS</h2>
+contrients are the rules applied to the column for validation 
+<ol>
+    <li>1.Uniqe</li>
+    <li>2.Not Null</li>
+    <li>3. check </li>
+    <li>4. Primary key </li>
+    <li>5. forigen Key</li>
+</ol>
+
+note about NULL :
+it is nether a zero (0) nor a space (_) but an empty space
+any airthmatic operations performed with null results null 
+any number / value (peration(+,-,*,/)) Null = NULL 
+we can not equivalte any values with null value
+it does not occupy any memory 
+
+<h4>1. Unique  </h4>
+if we assign column of the table with unique constraint we cannot store duplicate values . 
+
+<h4>2. NOT NULL </h4>
+if we assign column of the table with not null constrients , we cant store null values . 
+
+<h4>Check </h4>
+it is extra rule condition applied to columns of a table 
+
+synatx : 
+check (conditon)
+
+example:
+check(length(phoneno) = 10)
+also we can add constrients to this table are : uniqe and not null  
+
+<h4>Primary Key </h4>it is used to identify or fetch particular record from table <br>
+<b>Characterstics of primary key </b>
+it is combiantion of the not null and unique <br>
+it will not accept duplicate values <br>
+it will not accept null values <br>
+all unique and not null columns are called as key attributes also candidate keys <br> and other clumns ( which are having duplicate value and null values ) are called non key atributes <br>
+a table can have only one primary key <br> we can create a table without primary key but it is highly recomnded . <br>
+if there is no primary key we can go for composite key or psudeo columns . 
+
+
+<h4>Foregien key </h4>
+it is used to establish relationship or conection between the tables <br>
+<b>characterstics of foreign key </b> 
+it is not a combination of not null and unique <br>
+it will accepts null values <br>
+a table can have more than one foregin keys <br>
+an atributes to become foregin key it should be primary key in another table . <br> 
+it is also called as referencial intigrity contrients . <br>
+
+note:
+contrents are optional but higly recomnded . <br>
+for a column we can assign more than contrient.
+
+<h2>Summary Table: Primary Key vs Foreign Key</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>Primary Key</th>
+      <th>Foreign Key</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Main Purpose </strong></td>
+      <td>Uniquely identifies a record in its own table</td>
+      <td>Links two tables together.</td>
+    </tr>
+    <tr>
+      <td><strong>Uniqueness</strong></td>
+      <td>Must be unique.</td>
+      <td>Can contain duplicate values.</td>
+    </tr>
+    <tr>
+      <td><strong>Null Values</strong></td>
+      <td>Cannot be NULL.</td>
+      <td>Can be NULL.</td>
+    </tr>
+    <tr>
+      <td><strong>Limit</strong></td>
+      <td>Only one per table.</td>
+      <td>Multiple allowed per table.</td>
+    </tr>
+  </tbody>
+</table>
+<h2>SQL staements or SQL Sub Language </h2>
+<ol>
+    <li>1.DDL (DATA DEFINITION LANGUAGE )</li>
+    keywords :
+    <ol>
+        <li>1.Create</li>
+        <li>2.Alter</li>
+        <li>3.Rename</li>
+        <li>4.Trancate</li>
+        <li>5.Drop</li>
+    </ol>
+    
+    <li>2.DML (DATA MANUFULATION LANGUAGE)</li>
+    <ol>
+        <li>1.Insert</li>
+        <li>2.Delete</li>
+        <li>3.Update</li>
+    </ol>
+    <li>3.DCL (DATA CONTROL LANGUAGE )</li>
+    <ol>
+        <li>1.Grant </li>
+        <li>2. Rewoke</li>
+    </ol>
+    <li>4.TCL (TRANCATION CONTROL LANGUAGE)</li>
+    <ol>
+        <li>1.Roll Baack</li>
+        <li>2.Commit</li>
+        <li>3.Save point</li>
+    </ol>
+    <li>5.DQL (DATA QUERY LANGUAGE )</li>
+    <ol>
+        <li>select</li>
+    </ol>
+</ol>
+<b>DQL (Data QUERY LANGUAGE)</b> <br>
+it is used to fetch the data from database :
+it has 3 types :
+<ol>
+    <li>1.Projection</li>
+    <li>2.Selection</li>
+    <li>3.joins</li>
+</ol>
+<h2>1. Projection </h2>
+the process of fecting or retriving the data from the data base by selecting all the columns or required columns is known as projection <br>
+here we can restict the columns but we cant restrict the rows.
+
+sykntx: 
+select */[distict] column_name/expression [alias] <br>
+from table_name;
+
+select or keyword ( select from )
+
+order of execution 
+1. FROM
+2. SELECT 
+
+whenever the table not exist then in terminal it appers like <b>table or view does not exist</b>from cal
+
+whrite a query to disply of all the emplyoee details or WAQTD details of all the employees 
+
+select * <br>
+from emp;
+
+<h3>From clause </h3>
+from clasue starts execution <br>
+for from clause we can pass table name as argument <br>
+the job of from clause is go to database and serch the table and puts the table execution <br>
+if the table doest exist in the database then it throws " table or view does not exist" 
+
+<h3>Select clause </h3>
+select clause starts execution after the execution of from clause  <br>
+in select clause we can pass three arguments * , column name  ,  expression <br>
+slect clause go to table under execution and selects the columns mentioned . <br>
+select clause is only responsible for reporting result table or out put table <br>
+
+note : semicolon (;) is used to terminate the Query <br> <br>
+
+
+<span style="color: red;">Q :</span> WAQTD employee name hiredate of all employee <br>
+select ename , hiredate <br>
+from emp ;
+
+
+
+
+
 
 
 
