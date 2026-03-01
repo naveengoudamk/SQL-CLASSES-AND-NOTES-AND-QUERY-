@@ -309,34 +309,200 @@ whrite a query to disply of all the emplyoee details or WAQTD details of all the
 
 select * <br>
 from emp;
+<h3>FROM Clause</h3>
+<ul>
+  <li>FROM clause starts execution.</li>
+  <li>In the FROM clause we pass the table name as an argument.</li>
+  <li>The job of the FROM clause is to go to the database, search the table, and put the table under execution.</li>
+  <li>If the table does not exist in the database, it throws the error: <b>table or view does not exist</b>.</li>
+</ul>
 
-<h3>From clause </h3>
-from clasue starts execution <br>
-for from clause we can pass table name as argument <br>
-the job of from clause is go to database and serch the table and puts the table execution <br>
-if the table doest exist in the database then it throws " table or view does not exist" 
+<h3>SELECT Clause</h3>
+<ul>
+  <li>SELECT clause starts execution after the FROM clause.</li>
+  <li>In SELECT clause we can pass three types of arguments:</li>
+  <ul>
+    <li>* (all columns)</li>
+    <li>Column names</li>
+    <li>Expressions</li>
+  </ul>
+  <li>SELECT clause goes to the table under execution and selects the mentioned columns.</li>
+  <li>SELECT clause is responsible only for reporting the result table (output table).</li>
+</ul>
 
-<h3>Select clause </h3>
-select clause starts execution after the execution of from clause  <br>
-in select clause we can pass three arguments * , column name  ,  expression <br>
-slect clause go to table under execution and selects the columns mentioned . <br>
-select clause is only responsible for reporting result table or out put table <br>
+<p><b>Note:</b> Semicolon (;) is used to terminate the query.</p>
 
-note : semicolon (;) is used to terminate the Query <br> <br>
+<h3>Queries</h3>
 
+<p style="color:red;"><b>Q:</b> WAQTD employee name and hiredate of all employees</p>
+<pre>
+SELECT ename, hiredate
+FROM emp;
+</pre>
 
-<span style="color: red;">Q :</span> WAQTD employee name hiredate of all employee <br>
-select ename , hiredate <br>
+<p style="color:red;"><b>Q:</b> WAQTD all the details of employees along with hiredate</p>
+<pre>
+SELECT emp.*, hiredate
+FROM emp;
+</pre>
+
+<h3>DISTINCT Clause</h3>
+<ul>
+  <li>DISTINCT is used to remove duplicate values in the resultant table.</li>
+  <li>It should be used after SELECT and before column names.</li>
+  <li>It should be the first argument in the SELECT clause.</li>
+  <li>We can use multiple columns as arguments to DISTINCT.</li>
+  <li>It removes duplicate combinations of column values.</li>
+</ul>
+
+<p style="color:red;"><b>Q:</b> WAQTD names of the  employee without duplicates</p>
+<pre>
+SELECT distinct ename 
+FROM emp;
+</pre>
+<p style="color:red;"><b>Q:</b> WAQTD unique values of the department number along with names </p>
+<pre>
+SELECT distinct ename , deptno
+FROM emp;
+</pre>
+
+<h3>Expression Clause</h3>
+<ul>
+    <li>any statements which gives result is called as expression </li>
+    <li>It is the combination of operater and operands </li>
+    <li>operands are the values taht we can pass </li>
+    <li>operator is a symbol which performs</li>
+</ul>
+
+<p style="color:red;"><b>Q:</b> WAQTD names and annuval salary of employess</p>
+<pre>
+SELECT distinct ename , sal*12
+FROM emp;
+</pre>
+
+<h3>Alias</h3>
+<ul>
+    <li>it is an alternative name given for the column name or expression or function name </li>
+    <li>it is used to get user convient output</li>
+    <li>we can go for alias name with or without 'as' keyword</li>
+    <li>For numbers and special charcter (except underscore(_)) , we must use double inveted cama( ex : "Hello $ 12")</li>
+</ul>
+<hr>
+<h1>Selecetion</h1>
+the process of retriving and fecting data from database by selecting all the columns or required columnd along with rows is called selection <br>
+here we can restict columns as well as rows . <br>
+<b>Syntax :</b>
+select */[distinct] column_name/expression [alias] <br>
+from table_name <br>
+where < filter conditions > <br>
+
+<h3>Where clause</h3>
+<ul>
+    <li>it is used to filter the rows or records </li>
+    <li>it execute after execution of the from clause </li>
+    <li>here we can write the conditions if the conditions are true , it selects the records else rejects the records</li>
+    <li>we can write multiple conditions in where clause using <b>Logical operator</b></li>
+</ul>
+<p style="color:red;"><b>Q:</b> WAQTD details of the employes whose age is more than 80 </p>
+<pre>
+SELECT *
+FROM emp
+where (age >= 80);
+</pre>
+
+<p style="color:red;"><b>Q:</b> WAQTD hire date of employees whose name is allen </p>
+<pre>
+SELECT hiredate 
+FROM emp
+where ename = 'ALLEN' ;
+</pre>
+
+<p style="color:red;"><b>Q:</b> WAQTD hire date and names of employees if they got hired on 31st December 1995  </p>
+<pre>
+SELECT hiredate , ename
+FROM emp
+where ename = '31-DEC-1995' ;
+</pre>
+
+<b>Note :</b>
+age > 80 -> Number literals <br>
+ename = 'ALLEN' -> charcter literals <br>
+Hiredate = '31-DEC-1995' -> date literals 
+
+<ul>
+    <li>charcter literals and date litrals should be enclosed with single cotes ( ' ') ,</li>
+    <li>charcter litrals are case sensitive</li>
+    <li>for Date literals we shoud follow the date format</li>
+</ul>
+<hr>
+<h1>Operators In SQL</h1>
+<ol>
+    <li>Aithmetic Operators</li>
+    <li>Concatination Operators</li>
+    <li>Comparision Operators</li>
+    <li>Relational oprators </li>
+    <li>Logical Operators</li>
+    <li>Special operator</li>
+    <ol>
+        <li>IN</li>
+        <li>Not In</li>
+        <li>Between</li>
+        <li>Not - Between</li>
+        <li>Is</li>
+        <li>Is Not</li>
+        <li>Like</li>
+        <li>Not - Like</li>
+    </ol>
+    <li>Sub Query Operators</li>
+    <ol>
+        <li>Array</li>
+        <li>ALL</li>
+        <li>Exits</li>
+        <li>Not Exits</li>
+    </ol>
+</ol>
+
+<h3>Concatination Operators</h3>
+<ul>
+    <li>It is used to join like string</li>
+    <li>Symbol : || </li>
+    <li><b>Syntax</b> 'String1' || 'String' </li>
+    <li><b>Note : </b> we can join 'n' number of Strings by using Concatination Operators </li>
+</ul>
+<b>example :</b> <br>
+Select 'employee name is ' || ename || 'whose salary is' || sal || 'Hired on' || hiredate <br>
 from emp ;
 
+<b>Note :</b>
+<ul>
+    <li>when column name are same , we using same equal operator '=' then we should usse 'OR' operator </li>
+    <li>whenever we using Different Logical Operators (AND & OR ) in where clause we should use () parantesis <br> 
+        <b>example : </b>job = 'MANAGER' AND (deptno = 10 OR deptno = 30);</li>
+    <li>if there are 'n' number of conditions we should use 'n-1' logical operator</li>
+    <li>AND operator like multiplication & OR operators acts like Addition</li>
+</ul>
 
+<hr>
+<h2>1. In operators</h2>
+<ul>
+    <li>it is a multi valued operator which can accept multiple values at the RHS</li>
+    <li><b>Syntax:</b> Column_name/Expression  IN  (V<sub>1</sub>,V<sub>2</sub>,V<sub>3</sub>,..........V<sub>n</sub>)</li>
+    <b>Note</b> <li>Insted of using multiple OR operater we can use IN operator if the operaters  </li>
+    <li>if operater accepts only one RHS at a time then it is called as <b>Single value Operator</b> </li>
+    <li>if operator accepts one or more than one then it is called as <b>Multivalued Operator</b></li>
+</ul>
+<h2>2. Not In operator</h2>
+<ul>
+    <li>It is also Multivalued operator which can accept multiple values at RHS </li>
+    <li>it is similer to IN operator insted of selecting it rejects </li>
+    <li><b>Syntax</b> :- Column_name/exp Not IN (V<sub>1</sub>,V<sub>2</sub>,V<sub>3</sub>,..........V<sub>n</sub>)</li>
+</ul>
+<h2>3. Between Operator</h2>
+<ul>
+    <li>It is used whenever we have the range of values [start value & End/Upper value]</li>
+    <li><b>Syntax:</b> Column_name Between lowerRange AND upperRange</li>
 
-
-
-
-
-
-
+</ul>
 
 
 
