@@ -1,14 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SQL</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
 </head>
+
 <body>
     <h1><b>SQL</b></h1>
     <b>Data:</b> <br>
-    <p>data is a pieace of value or collection of values which is used describe the real world object. </p> 
+    <p>data is a pieace of value or collection of values which is used describe the real world object. </p>
     <ol>
         <li>there are two types </li>
         <ul>
@@ -20,13 +44,20 @@
             </li>
         </ul>
     </ol>
-    <b>example :</b> <p> Car (unproceed) - raw fact <br>  car have 4 wheel - imfornation(processed data) </p> <br>
-    <b><h1>Data base</h1></b> <br>
-    <p>Data base is the centralised place where all data is stored in Systematic  and organised way . <br> example : Books , HDD , Youtube , Facebook , etc <br>
-    represented as <br>
-    <img src="./images/./Screenshot 2026-02-08 at 10.19.43 PM.png" alt="" height="200px"></p><br> <hr>
-    what is <B>SQL</B>? <br> SQL is the structerd query language or Sequensial query language which is used to interact or communicate and manufulate database.
-    <br> 
+    <b>example :</b>
+    <p> Car (unproceed) - raw fact <br> car have 4 wheel - imfornation(processed data) </p> <br>
+    <b>
+        <h1>Data base</h1>
+    </b> <br>
+    <p>Data base is the centralised place where all data is stored in Systematic and organised way . <br> example :
+        Books , HDD , Youtube , Facebook , etc <br>
+        represented as <br>
+        <img src="./images/./Screenshot 2026-02-08 at 10.19.43 PM.png" alt="" height="200px">
+    </p><br>
+    <hr>
+    what is <B>SQL</B>? <br> SQL is the structerd query language or Sequensial query language which is used to interact
+    or communicate and manufulate database.
+    <br>
     Histry of SQL :
     <pre>>>>>
 
@@ -40,10 +71,15 @@
         >>
     </pre>
     <hr>
-    <b>DBMS</b> DBMS is the software which uses all query language . using that query langage database users writes query to interact with Databasse . <br>
-    <img src="./images/Screenshot 2026-02-09 at 1.36.51 PM.png" alt="" height="300px"> <br> 
-    <p>In DBMS data will be stored in the form of files and we can't establish relationship between the files ( because of different file formats (ex : pdf, jpeg, png, mp4 etc))</p><hr>
-    <b>RDBMS :</b> <p> RDBMS is the software uses only Query language using query language database users write SQL QUERY to interact with Databasse . </p>
+    <b>DBMS</b> DBMS is the software which uses all query language . using that query langage database users writes
+    query to interact with Databasse . <br>
+    <img src="./images/Screenshot 2026-02-09 at 1.36.51 PM.png" alt="" height="300px"> <br>
+    <p>In DBMS data will be stored in the form of files and we can't establish relationship between the files ( because
+        of different file formats (ex : pdf, jpeg, png, mp4 etc))</p>
+    <hr>
+    <b>RDBMS :</b>
+    <p> RDBMS is the software uses only Query language using query language database users write SQL QUERY to interact
+        with Databasse . </p>
     <br>
     <img src="./images/Screenshot 2026-02-10 at 12.03.25 AM.png" alt="" height="300px">
     <hr>
@@ -54,16 +90,19 @@
     <hr>
     <h1><b>Rules of EF.Codd</b></h1>. <br>
     <ol>
-        <li>Data entered into the cell must be single valued data (if we have double values then we can cerete new table )</li>
-        <li>In RDBMS we can store the data into multiple tables . if neccessary we can establish relationship between tables </li>
-        <li>In RDBMS everything will be stored in the form of tables including META DATA ( details about the data is claled as meta deta ) </li>
+        <li>Data entered into the cell must be single valued data (if we have double values then we can cerete new table
+            )</li>
+        <li>In RDBMS we can store the data into multiple tables . if neccessary we can establish relationship between
+            tables </li>
+        <li>In RDBMS everything will be stored in the form of tables including META DATA ( details about the data is
+            claled as meta deta ) </li>
         <li>data entered into a cell must be validated </li>
-        we can do validation by assigining datatypes and contraints to colomn of a table . 
+        we can do validation by assigining datatypes and contraints to colomn of a table .
 
     </ol>
 
     note :
-    table : cominations of rows and columns  . table / entity / object <br>
+    table : cominations of rows and columns . table / entity / object <br>
     chell : intersection of rows and columns <br>
     rows / records / tuples <br>
     column / atributes / fields <br>
@@ -83,7 +122,8 @@
     </ol>
     <h4>1. char</h4>
     char stands for Charchter <br>
-    If we assign column of a table with CHAR datatype we can store Alapabets (A-Z/a-z), Number (0-9), and special charcter(&, ? , # ,@). <br>
+    If we assign column of a table with CHAR datatype we can store Alapabets (A-Z/a-z), Number (0-9), and special
+    charcter(&, ? , # ,@). <br>
     The deafult size of char is ONE (1) <br>
     IN char we can store upto 2000 Character <br>
     Char follows fixed length memory allocation <br>
@@ -93,421 +133,667 @@
     <br>
     <h4>2. Varchar </h4>
     varchar Stands for Variable charcter <br>
-    If we assign column of a table with CHAR datatype we can store Alapabets (A-Z/a-z), Number (0-9), and special charcter(&, ? , # ,@). <br>
+    If we assign column of a table with CHAR datatype we can store Alapabets (A-Z/a-z), Number (0-9), and special
+    charcter(&, ? , # ,@). <br>
     The default size of varchar is 0 ( zero) <br>
-    in varchar we can store upto 2000 charcters , varchar2 is updated version of varchar . where we can store 4000 charcters. <br>
+    in varchar we can store upto 2000 charcters , varchar2 is updated version of varchar . where we can store 4000
+    charcters. <br>
     varchar follows variable length memory allocation . <br>
     here also charcter must be enclosed with single coutes (''). <br>
     syntax : varchar(size) <br>
     <!DOCTYPE html>
 
-<h1>Difference between CHAR and VARCHAR</h1>
+    <h1>Difference between CHAR and VARCHAR</h1>
 
-<h2>CHAR</h2>
-<ul>
-    <li>Stores data in fixed length.</li>
-    <li>If the allocated space is not fully used, remaining space is filled with blank spaces.</li>
-    <li>Also called a static data type.</li>
-    <li>Defined size of CHAR is fixed (e.g., CHAR(2000)).</li>
-    <li>Can store up to the defined number of characters.</li>
-    <li>Execution is faster.</li>
-</ul>
+    <h2>CHAR</h2>
+    <ul>
+        <li>Stores data in fixed length.</li>
+        <li>If the allocated space is not fully used, remaining space is filled with blank spaces.</li>
+        <li>Also called a static data type.</li>
+        <li>Defined size of CHAR is fixed (e.g., CHAR(2000)).</li>
+        <li>Can store up to the defined number of characters.</li>
+        <li>Execution is faster.</li>
+    </ul>
 
-<h2>VARCHAR</h2>
-<ul>
-    <li>Stores data in variable length.</li>
-    <li>Only actual data is stored; unused space is not consumed.</li>
-    <li>Also called a dynamic data type.</li>
-    <li>Default size varies (e.g., VARCHAR2 in Oracle up to ~4000 bytes depending on settings).</li>
-    <li>Uses memory efficiently.</li>
-    <li>Execution is slower compared to CHAR.</li>
-</ul>
+    <h2>VARCHAR</h2>
+    <ul>
+        <li>Stores data in variable length.</li>
+        <li>Only actual data is stored; unused space is not consumed.</li>
+        <li>Also called a dynamic data type.</li>
+        <li>Default size varies (e.g., VARCHAR2 in Oracle up to ~4000 bytes depending on settings).</li>
+        <li>Uses memory efficiently.</li>
+        <li>Execution is slower compared to CHAR.</li>
+    </ul>
 
-Example Visualisation
-If you define both columns with a length of 10 and store the word "Data":
-Data Type 	Definition	Data Stored	Actual Storage (Bytes)	Visual Representation
-CHAR	CHAR(10)	"Data"	10 bytes	[D][a][t][a][ ][ ][ ][ ][ ][ ] (Padded)
-VARCHAR2	VARCHAR2(10)	"Data"	4 bytes (+1-2 metadata)	[D][a][t][a] (No padding)
+    Example Visualisation
+    If you define both columns with a length of 10 and store the word "Data":
+    Data Type Definition Data Stored Actual Storage (Bytes) Visual Representation
+    CHAR CHAR(10) "Data" 10 bytes [D][a][t][a][ ][ ][ ][ ][ ][ ] (Padded)
+    VARCHAR2 VARCHAR2(10) "Data" 4 bytes (+1-2 metadata) [D][a][t][a] (No padding)
 
-<h4>3. Number </h4>
-If we assign column of the table with Number datatype we can store any number. <br>
-syntax : number (precision , [scale]) and Integer = precission - scale . <br>
-precission : total number of digits including decimal values . 
-Scale : Total number of  decimal values ( default value is '0')
-the range of precission : 1 - 38 ;
-the range of scale  : -84 to 127 ;
-<b>rules </b>
-1. precision check 
-2. scale check(decimal)
-3. Interger ( Precision - Scale )
+    <h4>3. Number </h4>
+    If we assign column of the table with Number datatype we can store any number. <br>
+    syntax : number (precision , [scale]) and Integer = precission - scale . <br>
+    precission : total number of digits including decimal values .
+    Scale : Total number of decimal values ( default value is '0')
+    the range of precission : 1 - 38 ;
+    the range of scale : -84 to 127 ;
+    <b>rules </b>
+    1. precision check
+    2. scale check(decimal)
+    3. Interger ( Precision - Scale )
 
-<h4>4.Date</h4>
-if we assign column of the table with date dataype , we can store data value in below mentioned formats 
-1.DD-MON-YY
-2.DD-MON-YYYY
+    <h4>4.Date</h4>
+    if we assign column of the table with date dataype , we can store data value in below mentioned formats
+    1.DD-MON-YY
+    2.DD-MON-YYYY
 
-Syntax : Date 
+    Syntax : Date
 
-NOTE :  date must be enclosed inside the single quote ('') . ex : 'DD-MON-YYYY';
+    NOTE : date must be enclosed inside the single quote ('') . ex : 'DD-MON-YYYY';
 
-<h4>5. LOB</h4>
-<h5>1.CLOB</h5>
-here we can store huge amount of charcters upto 4GB of size
-<h5>2.BLOB</h5>
-Here we can store Binaray valuees of images , audio , documents , etc upto 4GB of size
-note : Data types are mandotary and we can <b> assign only one datatype for a column </b>. 
-
-
-<h2>CONSTRIENTS</h2>
-contrients are the rules applied to the column for validation 
-<ol>
-    <li>1.Uniqe</li>
-    <li>2.Not Null</li>
-    <li>3. check </li>
-    <li>4. Primary key </li>
-    <li>5. forigen Key</li>
-</ol>
-
-note about NULL :
-it is nether a zero (0) nor a space (_) but an empty space
-any airthmatic operations performed with null results null 
-any number / value (peration(+,-,*,/)) Null = NULL 
-we can not equivalte any values with null value
-it does not occupy any memory 
-
-<h4>1. Unique  </h4>
-if we assign column of the table with unique constraint we cannot store duplicate values . 
-
-<h4>2. NOT NULL </h4>
-if we assign column of the table with not null constrients , we cant store null values . 
-
-<h4>Check </h4>
-it is extra rule condition applied to columns of a table 
-
-synatx : 
-check (conditon)
-
-example:
-check(length(phoneno) = 10)
-also we can add constrients to this table are : uniqe and not null  
-
-<h4>Primary Key </h4>it is used to identify or fetch particular record from table <br>
-<b>Characterstics of primary key </b>
-it is combiantion of the not null and unique <br>
-it will not accept duplicate values <br>
-it will not accept null values <br>
-all unique and not null columns are called as key attributes also candidate keys <br> and other clumns ( which are having duplicate value and null values ) are called non key atributes <br>
-a table can have only one primary key <br> we can create a table without primary key but it is highly recomnded . <br>
-if there is no primary key we can go for composite key or psudeo columns . 
+    <h4>5. LOB</h4>
+    <h5>1.CLOB</h5>
+    here we can store huge amount of charcters upto 4GB of size
+    <h5>2.BLOB</h5>
+    Here we can store Binaray valuees of images , audio , documents , etc upto 4GB of size
+    note : Data types are mandotary and we can <b> assign only one datatype for a column </b>.
 
 
-<h4>Foregien key </h4>
-it is used to establish relationship or conection between the tables <br>
-<b>characterstics of foreign key </b> 
-it is not a combination of not null and unique <br>
-it will accepts null values <br>
-a table can have more than one foregin keys <br>
-an atributes to become foregin key it should be primary key in another table . <br> 
-it is also called as referencial intigrity contrients . <br>
-
-note:
-contrents are optional but higly recomnded . <br>
-for a column we can assign more than contrient.
-
-<h2>Summary Table: Primary Key vs Foreign Key</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>Feature</th>
-      <th>Primary Key</th>
-      <th>Foreign Key</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>Main Purpose </strong></td>
-      <td>Uniquely identifies a record in its own table</td>
-      <td>Links two tables together.</td>
-    </tr>
-    <tr>
-      <td><strong>Uniqueness</strong></td>
-      <td>Must be unique.</td>
-      <td>Can contain duplicate values.</td>
-    </tr>
-    <tr>
-      <td><strong>Null Values</strong></td>
-      <td>Cannot be NULL.</td>
-      <td>Can be NULL.</td>
-    </tr>
-    <tr>
-      <td><strong>Limit</strong></td>
-      <td>Only one per table.</td>
-      <td>Multiple allowed per table.</td>
-    </tr>
-  </tbody>
-</table>
-<h2>SQL staements or SQL Sub Language </h2>
-<ol>
-    <li>1.DDL (DATA DEFINITION LANGUAGE )</li>
-    keywords :
+    <h2>CONSTRIENTS</h2>
+    contrients are the rules applied to the column for validation
     <ol>
-        <li>1.Create</li>
-        <li>2.Alter</li>
-        <li>3.Rename</li>
-        <li>4.Trancate</li>
-        <li>5.Drop</li>
+        <li>1.Uniqe</li>
+        <li>2.Not Null</li>
+        <li>3. check </li>
+        <li>4. Primary key </li>
+        <li>5. forigen Key</li>
     </ol>
-    
-    <li>2.DML (DATA MANUFULATION LANGUAGE)</li>
+
+    note about NULL :
+    it is nether a zero (0) nor a space (_) but an empty space
+    any airthmatic operations performed with null results null
+    any number / value (peration(+,-,*,/)) Null = NULL
+    we can not equivalte any values with null value
+    it does not occupy any memory
+
+    <h4>1. Unique </h4>
+    if we assign column of the table with unique constraint we cannot store duplicate values .
+
+    <h4>2. NOT NULL </h4>
+    if we assign column of the table with not null constrients , we cant store null values .
+
+    <h4>Check </h4>
+    it is extra rule condition applied to columns of a table
+
+    synatx :
+    check (conditon)
+
+    example:
+    check(length(phoneno) = 10)
+    also we can add constrients to this table are : uniqe and not null
+
+    <h4>Primary Key </h4>it is used to identify or fetch particular record from table <br>
+    <b>Characterstics of primary key </b>
+    it is combiantion of the not null and unique <br>
+    it will not accept duplicate values <br>
+    it will not accept null values <br>
+    all unique and not null columns are called as key attributes also candidate keys <br> and other clumns ( which are
+    having duplicate value and null values ) are called non key atributes <br>
+    a table can have only one primary key <br> we can create a table without primary key but it is highly recomnded .
+    <br>
+    if there is no primary key we can go for composite key or psudeo columns .
+
+
+    <h4>Foregien key </h4>
+    it is used to establish relationship or conection between the tables <br>
+    <b>characterstics of foreign key </b>
+    it is not a combination of not null and unique <br>
+    it will accepts null values <br>
+    a table can have more than one foregin keys <br>
+    an atributes to become foregin key it should be primary key in another table . <br>
+    it is also called as referencial intigrity contrients . <br>
+
+    note:
+    contrents are optional but higly recomnded . <br>
+    for a column we can assign more than contrient.
+
+    <h2>Summary Table: Primary Key vs Foreign Key</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Feature</th>
+                <th>Primary Key</th>
+                <th>Foreign Key</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Main Purpose </strong></td>
+                <td>Uniquely identifies a record in its own table</td>
+                <td>Links two tables together.</td>
+            </tr>
+            <tr>
+                <td><strong>Uniqueness</strong></td>
+                <td>Must be unique.</td>
+                <td>Can contain duplicate values.</td>
+            </tr>
+            <tr>
+                <td><strong>Null Values</strong></td>
+                <td>Cannot be NULL.</td>
+                <td>Can be NULL.</td>
+            </tr>
+            <tr>
+                <td><strong>Limit</strong></td>
+                <td>Only one per table.</td>
+                <td>Multiple allowed per table.</td>
+            </tr>
+        </tbody>
+    </table>
+    <h2>SQL staements or SQL Sub Language </h2>
     <ol>
-        <li>1.Insert</li>
-        <li>2.Delete</li>
-        <li>3.Update</li>
+        <li>1.DDL (DATA DEFINITION LANGUAGE )</li>
+        keywords :
+        <ol>
+            <li>1.Create</li>
+            <li>2.Alter</li>
+            <li>3.Rename</li>
+            <li>4.Trancate</li>
+            <li>5.Drop</li>
+        </ol>
+
+        <li>2.DML (DATA MANUFULATION LANGUAGE)</li>
+        <ol>
+            <li>1.Insert</li>
+            <li>2.Delete</li>
+            <li>3.Update</li>
+        </ol>
+        <li>3.DCL (DATA CONTROL LANGUAGE )</li>
+        <ol>
+            <li>1.Grant </li>
+            <li>2. Rewoke</li>
+        </ol>
+        <li>4.TCL (TRANCATION CONTROL LANGUAGE)</li>
+        <ol>
+            <li>1.Roll Baack</li>
+            <li>2.Commit</li>
+            <li>3.Save point</li>
+        </ol>
+        <li>5.DQL (DATA QUERY LANGUAGE )</li>
+        <ol>
+            <li>select</li>
+        </ol>
     </ol>
-    <li>3.DCL (DATA CONTROL LANGUAGE )</li>
+    <b>DQL (Data QUERY LANGUAGE)</b> <br>
+    it is used to fetch the data from database :
+    it has 3 types :
     <ol>
-        <li>1.Grant </li>
-        <li>2. Rewoke</li>
+        <li>1.Projection</li>
+        <li>2.Selection</li>
+        <li>3.joins</li>
     </ol>
-    <li>4.TCL (TRANCATION CONTROL LANGUAGE)</li>
-    <ol>
-        <li>1.Roll Baack</li>
-        <li>2.Commit</li>
-        <li>3.Save point</li>
-    </ol>
-    <li>5.DQL (DATA QUERY LANGUAGE )</li>
-    <ol>
-        <li>select</li>
-    </ol>
-</ol>
-<b>DQL (Data QUERY LANGUAGE)</b> <br>
-it is used to fetch the data from database :
-it has 3 types :
-<ol>
-    <li>1.Projection</li>
-    <li>2.Selection</li>
-    <li>3.joins</li>
-</ol>
-<h2>1. Projection </h2>
-the process of fecting or retriving the data from the data base by selecting all the columns or required columns is known as projection <br>
-here we can restict the columns but we cant restrict the rows.
+    <h2>1. Projection </h2>
+    the process of fecting or retriving the data from the data base by selecting all the columns or required columns is
+    known as projection <br>
+    here we can restict the columns but we cant restrict the rows.
 
-sykntx: 
-select */[distict] column_name/expression [alias] <br>
-from table_name;
+    sykntx:
+    select */[distict] column_name/expression [alias] <br>
+    from table_name;
 
-select or keyword ( select from )
+    select or keyword ( select from )
 
-order of execution 
-1. FROM
-2. SELECT 
+    order of execution
+    1. FROM
+    2. SELECT
 
-whenever the table not exist then in terminal it appers like <b>table or view does not exist</b>from cal
+    whenever the table not exist then in terminal it appers like <b>table or view does not exist</b>from cal
 
-whrite a query to disply of all the emplyoee details or WAQTD details of all the employees 
+    whrite a query to disply of all the emplyoee details or WAQTD details of all the employees
 
-select * <br>
-from emp;
-<h3>FROM Clause</h3>
-<ul>
-  <li>FROM clause starts execution.</li>
-  <li>In the FROM clause we pass the table name as an argument.</li>
-  <li>The job of the FROM clause is to go to the database, search the table, and put the table under execution.</li>
-  <li>If the table does not exist in the database, it throws the error: <b>table or view does not exist</b>.</li>
-</ul>
+    select * <br>
+    from emp;
+    <h3>FROM Clause</h3>
+    <ul>
+        <li>FROM clause starts execution.</li>
+        <li>In the FROM clause we pass the table name as an argument.</li>
+        <li>The job of the FROM clause is to go to the database, search the table, and put the table under execution.
+        </li>
+        <li>If the table does not exist in the database, it throws the error: <b>table or view does not exist</b>.</li>
+    </ul>
 
-<h3>SELECT Clause</h3>
-<ul>
-  <li>SELECT clause starts execution after the FROM clause.</li>
-  <li>In SELECT clause we can pass three types of arguments:</li>
-  <ul>
-    <li>* (all columns)</li>
-    <li>Column names</li>
-    <li>Expressions</li>
-  </ul>
-  <li>SELECT clause goes to the table under execution and selects the mentioned columns.</li>
-  <li>SELECT clause is responsible only for reporting the result table (output table).</li>
-</ul>
+    <h3>SELECT Clause</h3>
+    <ul>
+        <li>SELECT clause starts execution after the FROM clause.</li>
+        <li>In SELECT clause we can pass three types of arguments:</li>
+        <ul>
+            <li>* (all columns)</li>
+            <li>Column names</li>
+            <li>Expressions</li>
+        </ul>
+        <li>SELECT clause goes to the table under execution and selects the mentioned columns.</li>
+        <li>SELECT clause is responsible only for reporting the result table (output table).</li>
+    </ul>
 
-<p><b>Note:</b> Semicolon (;) is used to terminate the query.</p>
+    <p><b>Note:</b> Semicolon (;) is used to terminate the query.</p>
 
-<h3>Queries</h3>
+    <h3>Queries</h3>
 
-<p style="color:red;"><b>Q:</b> WAQTD employee name and hiredate of all employees</p>
-<pre>
+    <p style="color:red;"><b>Q:</b> WAQTD employee name and hiredate of all employees</p>
+    <pre>
 SELECT ename, hiredate
 FROM emp;
 </pre>
 
-<p style="color:red;"><b>Q:</b> WAQTD all the details of employees along with hiredate</p>
-<pre>
+    <p style="color:red;"><b>Q:</b> WAQTD all the details of employees along with hiredate</p>
+    <pre>
 SELECT emp.*, hiredate
 FROM emp;
 </pre>
 
-<h3>DISTINCT Clause</h3>
-<ul>
-  <li>DISTINCT is used to remove duplicate values in the resultant table.</li>
-  <li>It should be used after SELECT and before column names.</li>
-  <li>It should be the first argument in the SELECT clause.</li>
-  <li>We can use multiple columns as arguments to DISTINCT.</li>
-  <li>It removes duplicate combinations of column values.</li>
-</ul>
+    <h3>DISTINCT Clause</h3>
+    <ul>
+        <li>DISTINCT is used to remove duplicate values in the resultant table.</li>
+        <li>It should be used after SELECT and before column names.</li>
+        <li>It should be the first argument in the SELECT clause.</li>
+        <li>We can use multiple columns as arguments to DISTINCT.</li>
+        <li>It removes duplicate combinations of column values.</li>
+    </ul>
 
-<p style="color:red;"><b>Q:</b> WAQTD names of the  employee without duplicates</p>
-<pre>
+    <p style="color:red;"><b>Q:</b> WAQTD names of the employee without duplicates</p>
+    <pre>
 SELECT distinct ename 
 FROM emp;
 </pre>
-<p style="color:red;"><b>Q:</b> WAQTD unique values of the department number along with names </p>
-<pre>
+    <p style="color:red;"><b>Q:</b> WAQTD unique values of the department number along with names </p>
+    <pre>
 SELECT distinct ename , deptno
 FROM emp;
 </pre>
 
-<h3>Expression Clause</h3>
-<ul>
-    <li>any statements which gives result is called as expression </li>
-    <li>It is the combination of operater and operands </li>
-    <li>operands are the values taht we can pass </li>
-    <li>operator is a symbol which performs</li>
-</ul>
+    <h3>Expression Clause</h3>
+    <ul>
+        <li>any statements which gives result is called as expression </li>
+        <li>It is the combination of operater and operands </li>
+        <li>operands are the values taht we can pass </li>
+        <li>operator is a symbol which performs</li>
+    </ul>
 
-<p style="color:red;"><b>Q:</b> WAQTD names and annuval salary of employess</p>
-<pre>
+    <p style="color:red;"><b>Q:</b> WAQTD names and annuval salary of employess</p>
+    <pre>
 SELECT distinct ename , sal*12
 FROM emp;
 </pre>
 
-<h3>Alias</h3>
-<ul>
-    <li>it is an alternative name given for the column name or expression or function name </li>
-    <li>it is used to get user convient output</li>
-    <li>we can go for alias name with or without 'as' keyword</li>
-    <li>For numbers and special charcter (except underscore(_)) , we must use double inveted cama( ex : "Hello $ 12")</li>
-</ul>
-<hr>
-<h1>Selecetion</h1>
-the process of retriving and fecting data from database by selecting all the columns or required columnd along with rows is called selection <br>
-here we can restict columns as well as rows . <br>
-<b>Syntax :</b>
-select */[distinct] column_name/expression [alias] <br>
-from table_name <br>
-where < filter conditions > <br>
+    <h3>Alias</h3>
+    <ul>
+        <li>it is an alternative name given for the column name or expression or function name </li>
+        <li>it is used to get user convient output</li>
+        <li>we can go for alias name with or without 'as' keyword</li>
+        <li>For numbers and special charcter (except underscore(_)) , we must use double inveted cama( ex : "Hello $
+            12")</li>
+    </ul>
+    <hr>
+    <h1>Selecetion</h1>
+    the process of retriving and fecting data from database by selecting all the columns or required columnd along with
+    rows is called selection <br>
+    here we can restict columns as well as rows . <br>
+    <b>Syntax :</b>
+    select */[distinct] column_name/expression [alias] <br>
+    from table_name <br>
+    where < filter conditions> <br>
 
-<h3>Where clause</h3>
-<ul>
-    <li>it is used to filter the rows or records </li>
-    <li>it execute after execution of the from clause </li>
-    <li>here we can write the conditions if the conditions are true , it selects the records else rejects the records</li>
-    <li>we can write multiple conditions in where clause using <b>Logical operator</b></li>
-</ul>
-<p style="color:red;"><b>Q:</b> WAQTD details of the employes whose age is more than 80 </p>
-<pre>
+        <h3>Where clause</h3>
+        <ul>
+            <li>it is used to filter the rows or records </li>
+            <li>it execute after execution of the from clause </li>
+            <li>here we can write the conditions if the conditions are true , it selects the records else rejects the
+                records</li>
+            <li>we can write multiple conditions in where clause using <b>Logical operator</b></li>
+        </ul>
+        <p style="color:red;"><b>Q:</b> WAQTD details of the employes whose age is more than 80 </p>
+        <pre>
 SELECT *
 FROM emp
 where (age >= 80);
 </pre>
 
-<p style="color:red;"><b>Q:</b> WAQTD hire date of employees whose name is allen </p>
-<pre>
+        <p style="color:red;"><b>Q:</b> WAQTD hire date of employees whose name is allen </p>
+        <pre>
 SELECT hiredate 
 FROM emp
 where ename = 'ALLEN' ;
 </pre>
 
-<p style="color:red;"><b>Q:</b> WAQTD hire date and names of employees if they got hired on 31st December 1995  </p>
-<pre>
+        <p style="color:red;"><b>Q:</b> WAQTD hire date and names of employees if they got hired on 31st December 1995
+        </p>
+        <pre>
 SELECT hiredate , ename
 FROM emp
 where ename = '31-DEC-1995' ;
 </pre>
 
-<b>Note :</b>
-age > 80 -> Number literals <br>
-ename = 'ALLEN' -> charcter literals <br>
-Hiredate = '31-DEC-1995' -> date literals 
+        <b>Note :</b>
+        age > 80 -> Number literals <br>
+        ename = 'ALLEN' -> charcter literals <br>
+        Hiredate = '31-DEC-1995' -> date literals
 
-<ul>
-    <li>charcter literals and date litrals should be enclosed with single cotes ( ' ') ,</li>
-    <li>charcter litrals are case sensitive</li>
-    <li>for Date literals we shoud follow the date format</li>
-</ul>
-<hr>
-<h1>Operators In SQL</h1>
-<ol>
-    <li>Aithmetic Operators</li>
-    <li>Concatination Operators</li>
-    <li>Comparision Operators</li>
-    <li>Relational oprators </li>
-    <li>Logical Operators</li>
-    <li>Special operator</li>
-    <ol>
-        <li>IN</li>
-        <li>Not In</li>
-        <li>Between</li>
-        <li>Not - Between</li>
-        <li>Is</li>
-        <li>Is Not</li>
-        <li>Like</li>
-        <li>Not - Like</li>
-    </ol>
-    <li>Sub Query Operators</li>
-    <ol>
-        <li>Array</li>
-        <li>ALL</li>
-        <li>Exits</li>
-        <li>Not Exits</li>
-    </ol>
-</ol>
+        <ul>
+            <li>charcter literals and date litrals should be enclosed with single cotes ( ' ') ,</li>
+            <li>charcter litrals are case sensitive</li>
+            <li>for Date literals we shoud follow the date format</li>
+        </ul>
+        <hr>
+        <h1>Operators In SQL</h1>
+        <ol>
+            <li>Aithmetic Operators</li>
+            <li>Concatination Operators</li>
+            <li>Comparision Operators</li>
+            <li>Relational oprators </li>
+            <li>Logical Operators</li>
+            <li>Special operator</li>
+            <ol>
+                <li>IN</li>
+                <li>Not In</li>
+                <li>Between</li>
+                <li>Not - Between</li>
+                <li>Is</li>
+                <li>Is Not</li>
+                <li>Like</li>
+                <li>Not - Like</li>
+            </ol>
+            <li>Sub Query Operators</li>
+            <ol>
+                <li>Array</li>
+                <li>ALL</li>
+                <li>Exits</li>
+                <li>Not Exits</li>
+            </ol>
+        </ol>
 
-<h3>Concatination Operators</h3>
-<ul>
-    <li>It is used to join like string</li>
-    <li>Symbol : || </li>
-    <li><b>Syntax</b> 'String1' || 'String' </li>
-    <li><b>Note : </b> we can join 'n' number of Strings by using Concatination Operators </li>
-</ul>
-<b>example :</b> <br>
-Select 'employee name is ' || ename || 'whose salary is' || sal || 'Hired on' || hiredate <br>
-from emp ;
+        <h3>Concatination Operators</h3>
+        <ul>
+            <li>It is used to join like string</li>
+            <li>Symbol : || </li>
+            <li><b>Syntax</b> 'String1' || 'String' </li>
+            <li><b>Note : </b> we can join 'n' number of Strings by using Concatination Operators </li>
+        </ul>
+        <b>example :</b> <br>
+        Select 'employee name is ' || ename || 'whose salary is' || sal || 'Hired on' || hiredate <br>
+        from emp ;
 
-<b>Note :</b>
-<ul>
-    <li>when column name are same , we using same equal operator '=' then we should usse 'OR' operator </li>
-    <li>whenever we using Different Logical Operators (AND & OR ) in where clause we should use () parantesis <br> 
-        <b>example : </b>job = 'MANAGER' AND (deptno = 10 OR deptno = 30);</li>
-    <li>if there are 'n' number of conditions we should use 'n-1' logical operator</li>
-    <li>AND operator like multiplication & OR operators acts like Addition</li>
-</ul>
+        <b>Note :</b>
+        <ul>
+            <li>when column name are same , we using same equal operator '=' then we should usse 'OR' operator </li>
+            <li>whenever we using Different Logical Operators (AND & OR ) in where clause we should use () parantesis
+                <br>
+                <b>example : </b>job = 'MANAGER' AND (deptno = 10 OR deptno = 30);
+            </li>
+            <li>if there are 'n' number of conditions we should use 'n-1' logical operator</li>
+            <li>AND operator like multiplication & OR operators acts like Addition</li>
+        </ul>
 
-<hr>
-<h2>1. In operators</h2>
-<ul>
-    <li>it is a multi valued operator which can accept multiple values at the RHS</li>
-    <li><b>Syntax:</b> Column_name/Expression  IN  (V<sub>1</sub>,V<sub>2</sub>,V<sub>3</sub>,..........V<sub>n</sub>)</li>
-    <b>Note</b> <li>Insted of using multiple OR operater we can use IN operator if the operaters  </li>
-    <li>if operater accepts only one RHS at a time then it is called as <b>Single value Operator</b> </li>
-    <li>if operator accepts one or more than one then it is called as <b>Multivalued Operator</b></li>
-</ul>
-<h2>2. Not In operator</h2>
-<ul>
-    <li>It is also Multivalued operator which can accept multiple values at RHS </li>
-    <li>it is similer to IN operator insted of selecting it rejects </li>
-    <li><b>Syntax</b> :- Column_name/exp Not IN (V<sub>1</sub>,V<sub>2</sub>,V<sub>3</sub>,..........V<sub>n</sub>)</li>
-</ul>
-<h2>3. Between Operator</h2>
-<ul>
-    <li>It is used whenever we have the range of values [start value & End/Upper value]</li>
-    <li><b>Syntax:</b> Column_name Between lowerRange AND upperRange</li>
+        <hr>
+        <h2>1. In operators</h2>
+        <ul>
+            <li>it is a multi valued operator which can accept multiple values at the RHS</li>
+            <li><b>Syntax:</b> Column_name/Expression IN
+                (V<sub>1</sub>,V<sub>2</sub>,V<sub>3</sub>,..........V<sub>n</sub>)</li>
+            <b>Note</b>
+            <li>Insted of using multiple OR operater we can use IN operator if the operaters </li>
+            <li>if operater accepts only one RHS at a time then it is called as <b>Single value Operator</b> </li>
+            <li>if operator accepts one or more than one then it is called as <b>Multivalued Operator</b></li>
+        </ul>
+        <h2>2. Not In operator</h2>
+        <ul>
+            <li>It is also Multivalued operator which can accept multiple values at RHS </li>
+            <li>it is similer to IN operator insted of selecting it rejects </li>
+            <li><b>Syntax</b> :- Column_name/exp Not IN
+                (V<sub>1</sub>,V<sub>2</sub>,V<sub>3</sub>,..........V<sub>n</sub>)</li>
+        </ul>
+        <h2>3. Between Operator</h2>
+        <ul>
+            <li>It is used whenever we have the range of values [start value & End/Upper value]</li>
+            <li><b>Syntax:</b> Column_name Between lowerRange AND upperRange</li>
+            <li>works as including operator (includes the both values ) </li>
+            <li>act as Range operator ( we cant inter change the values)</li>
+        </ul>
+        <h2>4. Not Between Operator</h2>
+        <ul>
+            <li>It is used whenever we have the range of values insted of selecting it rejects / exslude[start value &
+                End/Upper value]</li>
+            <li><b>Syntax:</b> Column_name Between lowerRange AND upperRange</li>
+            <li>works as including operator (includes the both values ) </li>
+            <li>act as Range operator ( we cant inter change the values)</li>
+        </ul>
+        <h2>5. IS operator </h2>
+        <ul>
+            <li>it is used to compare with null vlaues</li>
+            <li><b>Syntax :</b> column_name IS null</li>
+        </ul>
+        <h2>6. IS operator </h2>
+        <ul>
+            <li>it is used to compare with Not null vlaues</li>
+            <li><b>Syntax :</b> column_name IS NOT null</li>
+        </ul>
+        <h2>7. LIKE operator </h2>
+        <ul>
+            <li>it is used to pattern matching and wild card search</li>
+            <li><b>Syntax :</b> column_name/expression Like 'PATTERN'</li>
+            <LI>In like operator we use %(percentile) & _(underscore) are Meta characters </LI>
+            <li>% represents n number of charcters </li>
+            <li>_ represents only one character</li>
+            <li>Should be enclosed with single quotes ('')</li>
+            <li>it is a case sensitive </li>
+        </ul>
+        <h2>7. NOT LIKE operator </h2>
+        <ul>
+            <li>it is used to pattern matching and wild card search insted of selecting it rejects </li>
+            <li><b>Syntax :</b> column_name/expression Like 'PATTERN'</li>
+            <LI>In like operator we use %(percentile) & _(underscore) are Meta characters </LI>
+            <li>% represents n number of charcters </li>
+            <li>_ represents only one character</li>
+            <li>Should be enclosed with single quotes ('')</li>
+            <li>it is a case sensitive </li>
+        </ul>
+        <hr>
+        <h2>Function</h2>
+        function are a block of code or set of instruction which used to perform specific tasks <br>
+        there are three main components of a function <br>
+        <ol>
+            <li>Function_name</li>
+            <li>Number of arguments (no of inputs)</li>
+            <li>Return type</li>
+        </ol>
+        In function we have two types :
+        <ol>
+            <li>User Defined function</li>
+            <li>In built function</li>
+            <ol>
+                <li>Single Row function</li>
+                <li>Multi Row function</li>
+            </ol>
+        </ol>
+        <h3>Single row function </h3>
+        <ul>
+            <li>SRF() Execute Row by Row </li>
+            <li>SRF takes one input process and executes it to generate an output and takes next input and so on </li>
+            <li>if we pass 'n' number of input to the single row function it returns 'n' number of output </li>
+        </ul>
 
-</ul>
+        <h3>Multi Row function</h3>
+        <ul>
+            <li>MRF execcutes Group by group </li>
+            <li>IT takes all the inputs at one shot and then executes and provides A single Output </li>
+            <li>If we pass 'n' number of input to MRF() it return '1' output </li>
+        </ul>
+        <b>Notes</b>
+        <ol>
+            <li>MRF() accepts only one arguments (ex: max(sal)) </li>
+            <li>we cannot use any column along with MRF() in select clause </li>
+            <li>Count is only one MRF() which can accept '*' as an arguments
+                <ul>
+                    <li>count() is used to find the number of rows in the given table or given column </li>
+                </ul>
+            </li>
+            <li>MRF() ignores null values </li>
+            <li>we cannot write MRF() as a condition in where clause </li>
+        </ol>
+        <h2>Difference Between Single Row Function (SRF) and Multi Row Function (MRF)</h2>
+
+        <table>
+            <tr>
+                <th>Feature</th>
+                <th>Single Row Function (SRF)</th>
+                <th>Multi Row Function (MRF)</th>
+            </tr>
+
+            <tr>
+                <td>Also Called</td>
+                <td>Scalar Function / Server Function</td>
+                <td>Aggregate Function</td>
+            </tr>
+
+            <tr>
+                <td>Execution</td>
+                <td>Executes Row by Row</td>
+                <td>Executes Group by Group</td>
+            </tr>
+
+            <tr>
+                <td>Input & Output</td>
+                <td>Takes 'n' inputs and returns 'n' outputs</td>
+                <td>Takes 'n' inputs and returns Single output</td>
+            </tr>
+
+            <tr>
+                <td>WHERE Clause</td>
+                <td>Used in WHERE clause</td>
+                <td>Cannot be used directly in WHERE clause</td>
+            </tr>
+
+            <tr>
+                <td>Use with Other Columns</td>
+                <td>Can be used with any other column</td>
+                <td>Cannot use other columns without GROUP BY</td>
+            </tr>
+
+            <tr>
+                <td>NULL Handling</td>
+                <td>Does not ignore NULL values (depends on function)</td>
+                <td>Ignores NULL values (except COUNT(*))</td>
+            </tr>
+
+            <tr>
+                <td>Examples</td>
+                <td>UPPER(), LOWER(), ROUND()</td>
+                <td>SUM(), AVG(), COUNT(), MAX(), MIN()</td>
+            </tr>
+
+        </table>
+        <h3>Group By Clause</h3>
+        <ul>
+            <li>Group by clause is used to group the records</li>
+            <b>Note :</b>
+            <li>Group by clause Enecutes row by row</li>
+            <li>After the Enecution of Group By Clause we get Groups </li>
+            <li>Therefore any clause Executes after group by must execute Group by Group </li>
+            <li>The Column name or Expresion Con be used for grouping can be used in select Clause</li>
+            <li>Group by clause Can be used without using where clause.</li>
+            <LI>number of groups created is directly propostional to number of unique values present in specified column
+            </LI>
+            <b>Syntax :</b> <br> <b>select</b> group-by-expression / group-function <br>
+            <b>from</b> table-name <br>
+            [where < filter Condition> ] <br>
+                <b>Group by</b> Column name / Expression
+        </ul>
+        <b>Order of excution </b><br>
+        <ol>
+            <li>FORM [ROW BY ROW ]</li>
+            <LI>WHERE [ ROW BY ROW]</LI>
+            <LI>GROUP BY [ROW BY ROW]</LI>
+            <LI>SELECT</LI>
+        </ol>
+        <h2>Having Clause </h2>
+        <ul>
+            <li>Having clause is used to filter the groups</li>
+            <b>Note :</b>
+            <li>having clause excute group by group</li>
+            <li>Having clause always used after group by clause</li>
+            <li>In Having Clause we write group fitter condition</li>
+            <li>Having Clause Cannot be used without the group by clause</li>
+            <li>In having clause we can use mullti row fuction (MRF()) as condition</li>
+            <b>Syntax :</b> <br> <b>select</b> group-by-expression / group-function <br>
+            <b>from</b> table-name <br>
+            [where < filter Condition> ] <br>
+                <b>Group by</b> Column name / Expression
+                <b>HAVING</b>
+                < group_filter_condition>
+        </ul>
+        <b>Order of excution </b><br>
+        <ol>
+            <li>FORM [ROW BY ROW ]</li>
+            <LI>WHERE [ ROW BY ROW]</LI>
+            <LI>GROUP BY [ROW BY ROW]</LI>
+            <li>HAVING [ GROUP BY GROUP ]</li>
+            <LI>SELECT [GROUP BY GROUP]</LI>
+            <h2>Difference Between WHERE and HAVING Clause</h2>
+
+            <table>
+                <tr>
+                    <th>Feature</th>
+                    <th>WHERE Clause</th>
+                    <th>HAVING Clause</th>
+                </tr>
+
+                <tr>
+                    <td>Purpose</td>
+                    <td>Filters rows</td>
+                    <td>Filters groups</td>
+                </tr>
+
+                <tr>
+                    <td>Works On</td>
+                    <td>Row by Row</td>
+                    <td>Group by Group</td>
+                </tr>
+
+                <tr>
+                    <td>Used With</td>
+                    <td>SELECT, UPDATE, DELETE</td>
+                    <td>Used with GROUP BY</td>
+                </tr>
+
+                <tr>
+                    <td>Aggregate Functions (MRF)</td>
+                    <td>Cannot use SUM(), AVG(), COUNT() directly</td>
+                    <td>Can use Aggregate Functions</td>
+                </tr>
+
+                <tr>
+                    <td>Execution Order</td>
+                    <td>Executed before GROUP BY</td>
+                    <td>Executed after GROUP BY</td>
+                </tr>
+
+                <tr>
+                    <td>Example</td>
+                    <td>WHERE salary > 20000</td>
+                    <td>HAVING AVG(salary) > 20000</td>
+                </tr>
+
+            </table>
 
 
 
 
-    
-    
+
+
+
+
+
+
 </body>
+
 </html>
