@@ -784,9 +784,52 @@ where ename = '31-DEC-1995' ;
                 </tr>
 
             </table>
+<hr>
+<h2>Sub Query :</h2>
+<p>A query written inside the another query is called as Sub query</p>
+<pre>Let us consider two query outer query and Inner query</pre>
+<ol>
+    <li>Inner query executes first and produces an output</li>
+    <li>the output of inner query is given / fed as an input to Outer query </li>
+    <li>The outer query generates the Result</li>
+    <li>Therefore we can state that 'the outer query is dependent on inner query and this is execution principle of subquery' </li>
+    <li><b style=" color: red;">When</b> to go for sub query or <b style="color: red;">why</b> to go for Sub query ?</li>
+    <b>When to find the unkown values we  go for Sub query</b>
 
-
-
+</ol>
+<h3>Case 1:</h3>
+inside the Query 
+<p style="color:red;"><b>Q:</b> WAQTD names and deptno  of employees who are working on same deptno as SMITH .</p>
+<pre>
+SELECT ename , deptno
+FROM emp
+where deptno = (select deptno 
+                from emp
+                where ename = 'SMITH') ;
+</pre>
+<b>Note :</b>
+<ol>
+    <li>In inner query or subquery select cluase we can specify only one column name </li>
+    <li>the corresponding columns need not be same but the data type has to be same </li>
+    <b>EXAMPLE :</b>
+    <pre>
+        select * 
+        from emp
+        where sal > (select comm
+                    from emp
+                    where ename ="SMITH");
+    </pre>
+</ol>
+<h3>CASE 2 :</h3>
+Whenever the data to be selected & conditions to be executed are in differnt tables , we use Sub query
+<p style="color:red;"><b>Q:</b> WAQTD Dname and loc of the employe whos ename is KING</p>
+<pre>
+SELECT dname
+FROM deptno;
+where deptno = (select deptno
+                from emp
+                where ename = 'KING');
+</pre>
 
 
 
