@@ -830,6 +830,254 @@ where deptno = (select deptno
                 from emp
                 where ename = 'KING');
 </pre>
+<hr>
+<h3>Sub query types </h3>
+<b>tyoes </b>
+<ol>
+    <li><b>SRSQ</b> - Single row Sub query</li>
+    <li><b>MRSQ</b> - Multiple Row Sub query</li>
+</ol>
+<h3>SRSQ</h3>
+<ol>
+    <li>if a subquery returns exactly one value or one record then it is called as SRSQ</li>
+    <li>if it returns only one value then we can use normal operators or the special operators to compare the values</li>
+</ol>
+<h3>MRSQ</h3>
+<ol>
+    <li>if a subquery returns More than one value or one record then it is called as MRSQ</li>
+    <li>if it returns more than one value then we cannot use normal operators we have to use  the special operators to compare the values</li>
+</ol>
+<b>Note</b> it is difficult to identify weather a subquery balongs to Single or multiple operators to comfare the values
+<hr>
+<h2>Sub Query operators</h2>
+<h3>ALL</h3>
+<ol>
+    <li>it is a subquery operator which is used along with relational operator(<,>,<=,>=) to comfare with multiple RHS </li>
+    <li>All operator returns true if all the values at the RHS satisfied condition</li>
+    <p style="color:red;"><b>Q:</b> WAQTD emplyoee name and sal of employes earning more than employees of dept 10</p>
+    <pre>
+    SELECT ename , sal
+    FROM emp;
+    where sal >all (select sal
+                from emp
+                where deptno = 10);
+</pre>
+</ol>
+<h3>ANY</h3>
+<ol>
+    <li>it is a subquery operator which is used along with relational operator(<,>,<=,>=) to comfare with multiple RHS </li>
+    <li>Any operator returns true if one of  the value at the RHS satisfied condition</li>
+    <p style="color:red;"><b>Q:</b> WAQTD emplyoee name and sal if they are  earning more than any one employees of dept 10</p>
+    <pre>
+    SELECT ename , sal
+    FROM emp;
+    where sal >any (select sal
+                from emp
+                where deptno = 10);
+</pre>
+</ol>
+<hr>
+<h3>Case 3</h3>
+<p>to find n <sup>th</sup> Maximum and n <sup>th</sup> Minimum value </p>
+<p style="color:red;"><b>Q:</b> WAQTD Second maximum salary</p>
+    <pre>
+    SELECT max(sal)
+    FROM emp;
+    where sal < (select max(sal)
+                from emp);
+<hr>
+<b>Nested Subquery </b>
+<ul>
+    <li>a subquery written inside another subquery is called as nested subquery</li>
+    <li>we can write upto 255 subquery</li>
+</ul>
+<hr>
+<h3>Case 4</h3>
+<p>to fect details of employee and manager <b>/ Employee and manager relation</b> </p>
+<b>Note</b>
+<table>
+    <tr>
+        <th>to find manager / reporting manager </th>
+        <td>select MGR in Sub Query</td>
+    </tr>
+    <tr>
+        <th>to find Employees  </th>
+        <td>select empno in Sub Query</td>
+    </tr>
+</table>
+<p style="color:red;"><b>Q:</b> WAQTD ename of allens manager</p>
+    <pre>
+    SELECT ename
+    FROM emp;
+    where empno < (select MGR
+                from emp
+                where ename = 'Allen');
+    <p style="color:red;"><b>Q:</b> WAQTD names of employees reporting to smith </p>
+    <pre>
+    SELECT ename
+    FROM emp;
+    where MGR < (select empno 
+                from emp
+                where ename = 'Allen');
+
+<hr>
+<h5>When intervier asked for Subquery </h5>
+<ol>
+    <li>What is SubQuery ?</li>
+    <li>Explin / draw </li>
+    <li>why ? and when?</li>
+    <li>types of subquery <ol>
+        <li>Single Row Subquery </li>
+        <li>Multiple Row query</li>        
+    </ol></li>
+    <li>Sub Query opertionsol
+        <ol>
+            <li>ALL</li>
+            <LI>ANY</LI>
+            <li>Nested Subquery</li>
+            <li>Emp - MGR</li>
+        </ol>
+    </li>
+</ol>
+<hr>
+<b>Drawbacks of Subquery</b>
+<ol>
+    <li>we cannot fecth the data from multiple table or more than one table at a time or sumul</li>
+    <li>to find nth max and nth min values we sholud write n-1 Subquery , here query length is more and performence reduces </li>
+    <li>we cannot fetch employee and manager detils sumeliteonsly </li>
+</ol>
+<hr>
+<h3>JOINS</h3>
+<ol>
+    <li>The process of retrival of data from multiple tables Simulteonsly is known as Joins</li>
+    when or why do we use Joins ?
+    <li>whenever we want to select multiple attributes from more than one table </li>
+</ol>
+<b>Types of Joins </b> <br>
+<ol>
+    <li>Cartesian / Cross Join </li>
+    <li>Inner Join / Eque JOin </li>
+    <li>Outer Join
+        <ol>
+            <li>Left Outer join</li>
+            <li>Right Outer join</li>
+            <li>Full Outer join</li>
+        </ol>
+    </li>
+    <li>Self Join</li>
+    <li>Natural Join</li>
+</ol>
+<hr>
+<h3>Cratessian or Cross Join </h3>
+<ul>
+    <li>Here a record from table one is merged with all  the records table two </li>
+    <li>In cartision join we will get valid records along with invalid record </li>
+    <li>IN from clause output table columns are added & Rows are Multiplied</li>
+    <li>we can apply cross join with or without relationship between the tables</li>
+</ul>
+ <p style="color:red;"><b>Q:</b> ANSI SYNTAX  </p>
+    <pre>
+    SELECT */Column_name
+    FROM Table_name 1 CROSS JOIN Table_name 2;
+    </pre>
+<p style="color:red;"><b>Q:</b> ORACLE SYNTAX </p>
+    <pre>
+    SELECT */Column_name
+    FROM Table_name 1 , Table_name 2;
+    </pre>
+    <hr>
+    <h3>Ineer / Equee Join </h3>
+<ul>
+    <li>It is used to obtain only matching record or a records which has a pair</li>
+    <li>we can apply inner join only if there is Relationship betweeen tables</li>
+</ul>
+ <p style="color:red;"><b>Q:</b> ANSI SYNTAX  </p>
+    <pre>
+    SELECT */Column_name
+    FROM Table_name 1 Inner JOIN Table_name 2
+    ON < join condition > ;
+    </pre>
+<p style="color:red;"><b>Q:</b> ORACLE SYNTAX </p>
+    <pre>
+    SELECT */Column_name
+    FROM Table_name 1 , Table_name 2
+    where < Join_COndition >;
+    </pre>
+<hr>
+    <h3>Outer Join </h3>
+<ul>
+    <li>It is used to obtain only unmatching records</li>
+</ul>
+<h3>left outer Join </h3>
+<p>it is used to obatin unmatched records of left table along with matching records </p>
+ <p style="color:red;"><b>Q:</b> ANSI SYNTAX  </p>
+    <pre>
+    SELECT */Column_name
+    FROM Table_name 1 Left [Outer] JOIN Table_name 2
+    ON < join condition > ;
+    </pre>
+<p style="color:red;"><b>Q:</b> ORACLE SYNTAX </p>
+    <pre>
+    SELECT */Column_name
+    FROM Table_name 1 , Table_name 2
+    where table1.comun_column = table2.comun_column(+);
+    </pre>
+    <hr>
+    <h3>Right outer Join </h3>
+<p>it is used to obatin unmatched records of Right table along with matching records </p>
+ <p style="color:red;"><b>Q:</b> ANSI SYNTAX  </p>
+    <pre>
+    SELECT */Column_name
+    FROM Table_name 1 Right [Outer] JOIN Table_name 2
+    ON < join condition > ;
+    </pre>
+<p style="color:red;"><b>Q:</b> ORACLE SYNTAX </p>
+    <pre>
+    SELECT */Column_name
+    FROM Table_name 1 , Table_name 2
+    where table1.comun_column(+) = table2.comun_column;
+    </pre>
+    <hr>
+        <h3>Full outer Join </h3>
+<p>it is used to obatin unmatching records present in left and right table along with matching records </p>
+ <p style="color:red;"><b>Q:</b> ANSI SYNTAX  </p>
+    <pre>
+    SELECT */Column_name
+    FROM Table_name 1 Full [Outer] JOIN Table_name 2
+    ON < join condition > ;
+    </pre>
+<hr>
+<b>Self Join</b>
+<pre>
+    Joining a table bt itself is known as self join 
+why ? when ?
+whenever the data to select is in the same table but present in different records we use Self Join
+<p style="color:red;"><b>Q:</b> ANSI SYNTAX  </p>
+    <pre>
+    SELECT */Column_name
+    FROM Table_name_1 T1 JOIN Table_name_2 T2
+    ON < join condition > ;
+    </pre>
+<p style="color:red;"><b>Q:</b> ORACLE SYNTAX </p>
+    <pre>
+    SELECT */Column_name
+    FROM Table_name_1 T1 , Table_name_2 T2
+    where < join condition > ;
+
+    <b>Note :</b> Joining condition is different is self join 
+    T1.column_name = T2.column_name
+        <b>e.mgr=m.empno</b> you have use like this only ( if table name and column names are changed then it as of this )
+
+    <p style="color:red;"><b>Q:</b> WAQTD ename and manager name if employee is earinig sal more than manager </p>
+<pre>
+SELECT e.ename , m.ename
+FROM emp e , emp m
+where (e.mgr=m.empno) And e.sal >m.sal ;     
+</pre>
+    <hr>
+</pre>
+    
+    
 
 
 
